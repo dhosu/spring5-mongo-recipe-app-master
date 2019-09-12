@@ -36,9 +36,6 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Flux<Recipe> getRecipes() {
-
-        log.debug("I'm in the service");
-
         return recipeReactiveRepository.findAll();
     }
 

@@ -75,8 +75,7 @@ public class IndexControllerTest {
         assertEquals("index", viewName);
         verify(recipeService, times(1)).getRecipes();
         verify(model, times(1)).addAttribute(eq("recipes"), argumentCaptor.capture());
-        Flux<Recipe> fluxInController = argumentCaptor.getValue();
-        List<Recipe> recipeList = fluxInController.collectList().block();
+        List<Recipe> recipeList = (List<Recipe>) argumentCaptor.getValue();
         assertEquals(2, recipeList.size());
     }
 
