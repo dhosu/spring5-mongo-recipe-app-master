@@ -20,8 +20,6 @@ public class Ingredient {
     private String id = UUID.randomUUID().toString();
     private String description;
     private BigDecimal amount;
-
-    @DBRef
     private UnitOfMeasure uom;
 
     public Ingredient() {
